@@ -9,19 +9,18 @@
     <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="assets/javascript/game.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 
     <title>Crystal Collector</title>
 </head>
 
 <body>
     <div class="page-header">
-        
         <div class="container-fluid card mt-5 text-center header">
             <h1 class="title">
                 Crystal Collector Game
             </h1>
-    
+
         </div>
 
         <div class="container mx-auto p-0">
@@ -34,19 +33,23 @@
                 <p>The value of each crystal is hidden from you until you click on it.</p>
                 <p>Each time when the game starts, the game will change the values of each crystal.</p>
 
-                <div class="matches">
-                    <h3>Points to Match: <span id="matchscores"></span></h3>
+                <div class="row">
+                    <div class="matches col-md-4">
+                        <h3>Points to Match: <span id="matchscores"></span></h3>
+                    </div>
+                    <div class="winandlose col-md-4">
+                        <h3>Wins: <span id="wins"></span><br>
+                            Losses: <span id="lose"></span></h3>
+                    </div>
+
+                    <div class="totalscore col-md-4">
+                        <h3>Your total score is: </h3>
+                        <div id="scores"></div>
+                    </div>
                 </div>
-                <div class="winandlose">
-                    <h3>Wins: <span id="wins"></span><br>
-                        Lose: <span id="lose"></span></h3>
-                </div>
-                <div id="colorcrystal">
-                </div>
-                <div class="totalscore">
-                    <h3>Your total score is: </h3>
-                    <div id="scores"></div>
-                </div>
+
+                <div id="colorcrystal"></div>
+            </div>
 </body>
 
 </html>

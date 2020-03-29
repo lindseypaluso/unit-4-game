@@ -1,21 +1,34 @@
 $(document).ready(function(){
 
     colorcrystals = ['assets/images/redcrystal.jpg', 'assets/images/bluecrystal.jpg', 'assets/images/yellowcrystal.jpg', 'assets/images/greencrystal.jpg'];
-	
+    
+    
 	var wins = 0;
 	var lose = 0;
     var yourscore = 0;
     
-    var matchscore = Math.floor((Math.random() * 101) + 19);
-
-	$("#matchscores").text(matchscore);
+    var matchscore = 0;
 
 	function restart() {
 		matchscore = Math.floor((Math.random() * 101) + 19);
 		console.log(matchscore);
-		$("#matchscores").text(matchscore);
-    // here you make a new colorcounts value but never put it anywhere
-		colorcounts = (Math.floor(Math.random() * 11) + 1);
+        $("#matchscores").text(matchscore);
+        
+        redCrystal = (Math.floor(Math.random() * 11) + 1);
+        yellowCrystal = (Math.floor(Math.random() * 11) + 1);
+        if (redCrystal === yellowCrystal) {
+            yellowCrystal += 1;
+        }
+        greenCrystal = (Math.floor(Math.random() * 11) + 1);
+        if (yellowCrystal === greenCrystal || greenCrystal === redCrystal) {
+            greenCrystal += 2;
+        }
+
+        blueCrystal = (Math.floor(Math.random() * 11) + 1);
+        if (blueCrystal === greenCrystal || blueCrystal === redCrystal || blueCrystal === yellowCrystal) {
+            greenCrystal += 3;
+        }
+   
 		yourscore = 0;
     $("#scores").text(yourscore);
 	}
@@ -25,7 +38,7 @@ $(document).ready(function(){
       	var imagecrystal = $("<img>");
       	imagecrystal.attr("src", colorcrystals[i]);
       	imagecrystal.addClass("crystal-image");
-        // need to update this one each element
+       
       	imagecrystal.attr("data-crystalvalue", colorcounts);
       	$("#colorcrystal").append(imagecrystal);
     }
